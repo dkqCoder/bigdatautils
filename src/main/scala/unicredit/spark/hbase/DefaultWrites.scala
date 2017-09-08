@@ -1,5 +1,9 @@
 package unicredit.spark.hbase
 
+import org.apache.hadoop.hbase.util.Bytes
+import org.json4s._
+import org.json4s.jackson.JsonMethods._
+
 trait DefaultWrites {
 
   implicit val booleanWriter = new Writes[Boolean] {

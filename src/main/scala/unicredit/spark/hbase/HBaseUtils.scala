@@ -3,8 +3,15 @@ package unicredit.spark.hbase
 import java.text.SimpleDateFormat
 import java.util.Calendar
 
-import scala.reflect.ClassTag
+import org.apache.hadoop.conf.Configuration
+import org.apache.hadoop.hbase.client.{Connection, ConnectionFactory}
+import org.apache.hadoop.hbase.mapreduce.TableOutputFormat
+import org.apache.hadoop.hbase.util.Bytes
+import org.apache.hadoop.hbase.{HColumnDescriptor, HTableDescriptor, TableName}
+import org.apache.hadoop.mapreduce.Job
+import org.apache.spark.rdd.RDD
 
+import scala.reflect.ClassTag
 /**
  * Utilities for dealing with HBase tables
  */
