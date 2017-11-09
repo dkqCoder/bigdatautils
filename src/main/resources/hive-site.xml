@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+	<!-- Hive Configuration can either be stored in this file or in the hadoop configuration files  -->
+	<!-- that are implied by Hadoop setup variables.                                                -->
+	<!-- Aside from Hadoop setup variables - this file is provided as a convenience so that Hive    -->
+	<!-- users do not have to edit hadoop configuration files (that may be managed as a centralized -->
+	<!-- resource).                                                                                 -->
+
+	<!-- Hive Execution Parameters -->
+
+	<property>
+		<name>javax.jdo.option.ConnectionURL</name>
+		<value>jdbc:mysql://hadoop-hd3:3306/matastore?createDatabaseIfNotExist=true</value>
+		<description>JDBC connect string for a JDBC metastore</description>
+	</property>
+
+	<property>
+		<name>javax.jdo.option.ConnectionDriverName</name>
+		<value>com.mysql.jdbc.Driver</value>
+		<description>Driver class name for a JDBC metastore</description>
+	</property>
+
+	<property>
+		<name>javax.jdo.option.ConnectionUserName</name>
+		<value>hive</value>
+		<description>username to use against metastore database</description>
+	</property>
+
+	<property>
+		<name>javax.jdo.option.ConnectionPassword</name>
+		<value>123</value>
+		<description>password to use against metastore database</description>
+	</property>
+
+	<property>
+		<name>hive.cli.print.header</name>
+		<value>true</value>
+		<description>Whether to print the names of the columns in query output.</description>
+	</property>
+
+	<property>
+		<name>hive.cli.print.current.db</name>
+		<value>true</value>
+		<description>Whether to include the current database in the Hive prompt.</description>
+	</property>
+
+	<property>
+		<name>hive.metastore.warehouse.dir</name>
+		<value>/user/hive/warehouse</value>
+		<description>location of default database for the warehouse</description>
+	</property>
+
+	<property>
+		<name>hive.metastore.uris</name>
+		<value>thrift://hadoop-hd3:9083</value>
+		<description>Thrift URI for the remote metastore. Used by metastore client to connect to remote metastore.</description>
+	</property>
+
+
+	<property>
+		<name>hbase.zookeeper.quorum</name>
+		<value>hadoop-hd3,hadoop-hd4,hadoop-hd5</value>
+	</property>
+	<property>
+		<name>hbase.zookeeper.property.clientPort</name>
+		<value>2181</value>
+	</property>
+	<property>
+		<name>hbase.master</name>
+		<value>hadoop-hd1:60000</value>
+	</property>
+
+</configuration>

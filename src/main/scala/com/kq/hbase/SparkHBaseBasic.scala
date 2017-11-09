@@ -1,5 +1,7 @@
 package com.kq.hbase
 
+import javax.jdo.annotations.Value
+
 import org.apache.spark.sql.SparkSession
 import unicredit.spark.hbase.{HBaseConfig, _}
 
